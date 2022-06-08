@@ -41,7 +41,7 @@ kind: Deployment
 metadata:
   name: conversao
 spec: 
-  replicas: 20
+  replicas: 10
   selector:
     matchLabels:
       app: conversao 
@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
       - name: conversao
-        image: juniormarques/conversao-temperatura:v2
+        image: juniormarques/conversao-temperatura:v3
         env: 
         - name: DB_DATABASE    
           value: "aula1"
@@ -73,7 +73,8 @@ spec:
   ports: 
   - port: 80
     targetPort: 8080
-    nodePort: 30000  
+    nodePort: 30000
+      
   type: NodePort 
 
 
